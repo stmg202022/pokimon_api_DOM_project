@@ -1,0 +1,143 @@
+:root {
+  /* theme mode */
+  --black: #1e2022;
+  --white: #ffffff;
+
+  /*font family */
+  --body__font: "Comic Sans MS", "Comic Sans", cursive;
+
+  /* basic color  */
+  --sky__blue: rgb(55, 125, 255);
+  --white__blue: #ebf2ff;
+  --light__yellow: #fae7c1;
+  --danger: #d66a6a;
+  --light__sky__blue: rgba(55, 125, 255, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--white__blue);
+  font-family: var(--body__font);
+}
+
+#pokimon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#card {
+  margin-top: 16px;
+  padding: 56px;
+  background-color: rgb(204 204 204 / 41%);
+  border-radius: 8px;
+  box-shadow: rgba(140, 152, 164, 0.125) 0px 6px 24px 0px;
+  width: 700px;
+}
+
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+#pokiIdInput {
+  width: 80%;
+}
+
+.btn {
+  min-width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 23px;
+  padding: 10px 22px;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #2b2a2ac2;
+  box-shadow: rgba(140, 152, 164, 0.125) 0px 6px 24px 0px;
+}
+.btn--outline {
+  background-color: transparent;
+  border: 1px solid var(--light__sky__blue);
+}
+
+ul li {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(140, 152, 164, 0.125) 0px 6px 24px 0px;
+  margin-top: 16px;
+  padding: 24px 24px;
+  overflow: hidden;
+  border: 0.5px solid #80808040;
+  border-radius: 4px;
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1);
+}
+ul li:hover {
+  transform: scale(1.05);
+}
+
+#poki__info,
+#poki__img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#poki__img > img {
+  width: 300px;
+  height: 300px;
+}
+
+/* #poki__info {
+} */
+
+.circle {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: rgba(140, 152, 164, 0.125) 0px 6px 24px 0px;
+}
+
+/* .circle__primary {
+  background-color: var(--sky__blue);
+} */
+
+.circle__secondary {
+  background-color: var(--white__blue);
+}
+
+/* .circle__ternary {
+  background-color: var(--light__yellow);
+} */
