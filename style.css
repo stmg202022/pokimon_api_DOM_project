@@ -24,7 +24,9 @@ body {
   background-color: var(--white__blue);
   font-family: var(--body__font);
 }
-
+.body__toggle {
+  background-color: #212121;
+}
 #pokimon {
   display: flex;
   align-items: center;
