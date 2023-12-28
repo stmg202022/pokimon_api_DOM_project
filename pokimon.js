@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const lists = document.getElementById("lists");
-  const lists_items = document.querySelectorAll("li");
+  const pokiIdInput = document.getElementById("pokiIdInput");
+  const addBtn = document.getElementById("addBtn");
+  const images = document.getElementById("images");
 
   let pokiLists = JSON.parse(localStorage.getItem("pokiLists")) || [];
   let isStore = false;
@@ -44,13 +46,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     div2.innerHTML = `
       <div class="circle circle__secondary">${id}</div>
-      <img class="image" src="${item.sprites.other.dream_world.front_default}" alt="" />
+      <img class="image" style={width: 100px; height: 100px;} src="${item.sprites.other.dream_world.front_default}" alt="" />
+      <img class="image2" style={width: 100px; height: 100px;} src="${item.sprites.other.home.front_default}" alt="" />
     `;
 
     li.appendChild(div);
     li.appendChild(div2);
 
     lists.appendChild(li);
+  };
+
+  const filterByName = (searchTerm) => {
+    const filteredList = pokiLists.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    // Clear the current list
+    lists.innerHTML = "";
+
+    // Display the filtered list
+    filteredList.forEach((item, idx) => {
+      returnLi(item, idx);
+    });
   };
 
   if (!pokiLists || pokiLists.length === 0) {
@@ -112,9 +129,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       returnLi(item, idx);
     });
 
-    pokiIdInput.addEventListener("change", async (e) => {
+    addBtn.addEventListener("click", async (e) => {
       e.preventDefault();
-      console.log(pokiIdInput.value);
+
+      const searchTerm = pokiIdInput.value.trim();
+      filterByName(searchTerm);
     });
   }
 });

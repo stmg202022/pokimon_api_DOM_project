@@ -31,10 +31,12 @@ body {
   justify-content: center;
 }
 
-#card {
+.card {
   margin-top: 16px;
   padding: 56px;
   background-color: rgb(204 204 204 / 41%);
+  /* dark mode */
+  /* background-color: rgb(0 0 0 / 84%); */
   border-radius: 8px;
   box-shadow: rgba(140, 152, 164, 0.125) 0px 6px 24px 0px;
   width: 700px;
@@ -90,12 +92,12 @@ ul li {
   overflow: hidden;
   border: 0.5px solid #80808040;
   border-radius: 4px;
-  transition: transform 0.5s ease-in-out;
-  transform: scale(1);
+  /* transition: transform 0.5s ease-in-out; */
+  /* transform: scale(1); */
 }
-ul li:hover {
+/* ul li:hover {
   transform: scale(1.05);
-}
+} */
 
 #poki__info,
 #poki__img {
@@ -105,9 +107,65 @@ ul li:hover {
   flex-direction: column;
 }
 
-#poki__img > img {
+.image,
+.image2 {
   width: 300px;
   height: 300px;
+  /* transition: transform 0.9s ease-in-out; */
+  /* transform: scale(1); */
+}
+
+.image2 {
+  display: none;
+}
+
+.image:hover {
+  display: none;
+}
+
+.image:hover + .image2 {
+  display: flex; /* or inline, inline-block, flex, etc. depending on your layout */
+}
+
+.image:hover,
+.image2:hover {
+  width: 40px;
+  height: 40px;
+  /* transform: scale(1.02); */
+  /* border-radius: 379px; */
+  /* background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(152 47 47 / 48%) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); */
+  /* transition: background 0.9s ease-in-out 5s; */
+  /* animation: backgroundAnimation 15s infinite alternate ease-in-out; */
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(152 47 47 / 48%) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  50% {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(152 47 47 / 48%) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  100% {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(152 47 47 / 48%) 100%,
+      rgba(0, 0, 0, 0) 0%
+    );
+  }
 }
 
 /* #poki__info {
