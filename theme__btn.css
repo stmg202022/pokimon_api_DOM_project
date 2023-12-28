@@ -39,7 +39,7 @@
   /* background: black; */
   background: white;
   position: absolute;
-  right: 0px;
+  right: -1px;
   top: 0px;
   display: flex;
   align-items: center;
